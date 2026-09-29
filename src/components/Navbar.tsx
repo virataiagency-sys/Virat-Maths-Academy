@@ -116,21 +116,27 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => setActiveView('curriculum')}
               className="text-left group flex items-center gap-2 cursor-pointer"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white flex items-center justify-center font-black text-lg shadow-sm group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white flex items-center justify-center font-black text-xl shadow-sm group-hover:scale-105 transition-transform">
                 V
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <span className="text-xl font-black tracking-tight bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent group-hover:opacity-90 transition-all">
-                    ViratMagix Mathe
+                    Virat Maths Academy
                   </span>
                   <span className="px-1.5 py-0.5 rounded bg-indigo-100 dark:bg-indigo-900/60 text-indigo-800 dark:text-indigo-300 text-[10px] font-extrabold uppercase">
                     K-12
                   </span>
                 </div>
-                <span className="hidden sm:block text-[11px] font-medium text-slate-500 dark:text-slate-400">
-                  Math, Abacus & Vedic Speed
-                </span>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-1.5">
+                  <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400">
+                    Math, Abacus &amp; Vedic Speed
+                  </span>
+                  <span className="hidden sm:inline text-slate-300 dark:text-slate-600">·</span>
+                  <span className="text-[10px] font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+                    Devs: VIRAT SHANKHDHAR &amp; AADYA SHANKHDHAR
+                  </span>
+                </div>
               </div>
             </button>
           </div>

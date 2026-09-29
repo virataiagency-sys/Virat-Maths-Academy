@@ -803,21 +803,21 @@ export default function App() {
       {/* Clean Footer */}
       <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 mt-12 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-          <div className="flex items-center gap-2">
-            <span className="font-extrabold text-slate-900 dark:text-slate-100">ViratMagix Mathe</span>
-            <span>·</span>
-            <span>K-12 Math, Abacus & Vedic Speed Learning</span>
-            <span>·</span>
-            <span>Classes 1–12</span>
+          <div className="flex flex-col sm:flex-row items-center gap-2">
+            <span className="font-extrabold text-slate-900 dark:text-slate-100">Virat Maths Academy</span>
+            <span className="hidden sm:inline">·</span>
+            <span>Developed by <strong className="text-slate-800 dark:text-slate-200">VIRAT SHANKHDHAR</strong> &amp; <strong className="text-slate-800 dark:text-slate-200">AADYA SHANKHDHAR</strong></span>
+            <span className="hidden sm:inline">·</span>
+            <span>Classes 1–12 (CBSE · ICSE · State Board · Olympiad)</span>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <span>CBSE NCERT Books</span>
             <span>·</span>
-            <span>AI Reasoning (ChatGPT, Claude, Perplexity, NotebookLM)</span>
+            <span>AI Multiverse Reasoning</span>
             <span>·</span>
-            <span>Live Search Grounding</span>
+            <span>Flow AI Podcast</span>
             <span>·</span>
-            <span>Firestore Persistent Storage</span>
+            <span>Interactive Abacus &amp; Vedic Lab</span>
           </div>
         </div>
       </footer>
