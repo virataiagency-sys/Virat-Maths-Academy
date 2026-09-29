@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // User profile document
+    match /users/{userId} {
+      allow read, create, update: if isOwner(userId);
+      allow delete: if isOwner(userId);
+
+      // Quiz records subcollection
+      match /quizRecords/{recordId} {
+        allow read, create, update: if isOwner(userId);
+        allow delete: if isOwner(userId);
+      }
+
+      // User preferences & custom instructions
+      match /preferences/{prefId} {
+        allow read, create, update: if isOwner(userId);
+        allow delete: if isOwner(userId);
+      }
+
+      // Saved problems subcollection
+      match /savedProblems/{problemId} {
+        allow read, create, update: if isOwner(userId);
+        allow delete: if isOwner(userId);
+      }
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

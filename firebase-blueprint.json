@@ -1,0 +1,81 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Represents the user's profile and progress metrics.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The unique Firebase Auth UID." },
+        "displayName": { "type": "string", "description": "Student display name." },
+        "email": { "type": "string", "description": "Student email address." },
+        "currentGrade": { "type": "number", "description": "Active class level (1-12)." },
+        "totalScore": { "type": "number", "description": "Cumulative score across all activities." },
+        "createdAt": { "type": "string", "description": "ISO timestamp of account creation." },
+        "lastActiveAt": { "type": "string", "description": "ISO timestamp of last activity." }
+      },
+      "required": ["userId", "displayName", "email"]
+    },
+    "QuizRecord": {
+      "title": "QuizRecord",
+      "description": "Record of a completed quiz session.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique quiz record ID." },
+        "userId": { "type": "string", "description": "Auth UID of the student." },
+        "grade": { "type": "number", "description": "Class level (1-12)." },
+        "pillar": { "type": "string", "description": "Subject pillar (basic_maths, algebra, abacus, vedic_maths)." },
+        "score": { "type": "number", "description": "Number of questions answered correctly." },
+        "totalQuestions": { "type": "number", "description": "Total questions in quiz." },
+        "completedAt": { "type": "string", "description": "ISO timestamp of completion." }
+      },
+      "required": ["userId", "grade", "pillar", "score", "totalQuestions"]
+    },
+    "CustomInstruction": {
+      "title": "CustomInstruction",
+      "description": "User preferences and prompt instructions for AI responses.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Auth UID of the student." },
+        "targetExam": { "type": "string", "description": "CBSE, Olympiad, NTSE, or General." },
+        "explanationTone": { "type": "string", "description": "Socratic, Rigorous, Friendly, or Vedic-First." },
+        "calculationMethod": { "type": "string", "description": "Preferred primary calculation method." },
+        "customPrompt": { "type": "string", "description": "Additional custom instructions." },
+        "updatedAt": { "type": "string", "description": "ISO timestamp of update." }
+      },
+      "required": ["userId", "targetExam", "explanationTone"]
+    },
+    "SavedProblem": {
+      "title": "SavedProblem",
+      "description": "Saved math problem or bookmark with AI analysis.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique problem bookmark ID." },
+        "userId": { "type": "string", "description": "Auth UID of the student." },
+        "grade": { "type": "number", "description": "Class level." },
+        "topic": { "type": "string", "description": "Math topic or chapter name." },
+        "question": { "type": "string", "description": "The math problem statement." },
+        "solution": { "type": "string", "description": "Generated solution or notes." },
+        "savedAt": { "type": "string", "description": "ISO timestamp." }
+      },
+      "required": ["userId", "question", "grade"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Public and private profile data for a specific user."
+    },
+    "/users/{userId}/quizRecords/{recordId}": {
+      "schema": "QuizRecord",
+      "description": "Quiz attempts and mastery scores recorded by this user."
+    },
+    "/users/{userId}/preferences/custom_instructions": {
+      "schema": "CustomInstruction",
+      "description": "Personalized learning style and Gemini AI customization settings."
+    },
+    "/users/{userId}/savedProblems/{problemId}": {
+      "schema": "SavedProblem",
+      "description": "Bookmarked problems and textbook solutions saved by this user."
+    }
+  }
+}
