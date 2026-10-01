@@ -1014,83 +1014,384 @@ export const primaryGrades: Record<1 | 2 | 3 | 4 | 5, GradeCurriculum> = {
     grade: 4,
     gradeTitle: 'Class 4: Big Friends (10-Complements) & Multiply by 11',
     levelTier: 'Primary (Classes 1-5)',
-    themeDescription: '4-digit division, fractions fundamentals, Soroban 10-complements (Big Friends), and lightning Vedic multiplication by 11.',
+    themeDescription: 'Comprehensive 4-digit addition, subtraction across zeros, multi-digit multiplication, long division (DMSB), and fraction operations.',
     pillars: {
       basic_maths: {
         pillar: 'basic_maths',
         pillarName: 'Basic Maths',
-        tagline: 'Long Division, Equivalent Fractions & Geometry Perimeters',
+        tagline: 'Addition, Subtraction, Multiplication, Division & Fractions (4-Digit Mastery)',
         iconName: 'Calculator',
         flowchart: {
-          title: 'How to Find Equivalent Fractions (The Golden Rule)',
-          concept: 'Multiply or divide top and bottom by the exact same non-zero number',
-          realWorldExample: 'Example: Convert 3/4 to an equivalent fraction with denominator 12',
+          title: 'How to Solve: 4-Digit Subtraction with Regrouping Across Zeros',
+          concept: 'Borrowing step-by-step through zeros from the nearest non-zero place value',
+          realWorldExample: 'Example: Subtract 5000 - 2748 (School library book count)',
           nodes: [
-            { id: '1', type: 'start', title: 'Inspect Starting Fraction', description: 'Fraction is 3/4. Target denominator is 12.' },
-            { id: '2', type: 'process', title: 'Find Scaling Factor', description: '12 / 4 = 3. The bottom was multiplied by 3.' },
-            { id: '3', type: 'process', title: 'Golden Rule of Fractions', description: 'Whatever you do to the bottom, you MUST do to the top!' },
-            { id: '4', type: 'process', title: 'Multiply Numerator', description: '3 x 3 = 9.' },
-            { id: '5', type: 'output', title: 'Resulting Fraction', description: '3/4 is equivalent to 9/12.' }
+            { id: '1', type: 'start', title: 'Set Up Column Alignment', description: 'Write Minuend (5000) on top and Subtrahend (2748) below. Align Thousands, Hundreds, Tens, and Ones.' },
+            { id: '2', type: 'process', title: 'Check Ones Column (0 - 8)', description: '0 is smaller than 8. We cannot subtract! We must borrow, but Tens and Hundreds are also 0.' },
+            { id: '3', type: 'process', title: 'Borrow from Thousands', description: 'Borrow 1 from 5 thousands: 5 becomes 4 thousands. It passes 10 hundreds to the hundreds column.' },
+            { id: '4', type: 'process', title: 'Cascade Borrowing to Tens and Ones', description: '10 hundreds becomes 9 hundreds (passing 10 tens). 10 tens becomes 9 tens (passing 10 ones to the ones column).' },
+            { id: '5', type: 'process', title: 'Subtract Column by Column', description: 'Ones: 10 - 8 = 2. Tens: 9 - 4 = 5. Hundreds: 9 - 7 = 2. Thousands: 4 - 2 = 2.' },
+            { id: '6', type: 'output', title: 'Verification Check', description: 'Result = 2252. Quick check by addition: 2252 + 2748 = 5000! Correct.' }
           ]
         },
+        flowcharts: [
+          {
+            title: 'How to Solve: 4-Digit Subtraction with Regrouping Across Zeros',
+            concept: 'Borrowing step-by-step through zeros from the nearest non-zero place value',
+            realWorldExample: 'Example: Subtract 5000 - 2748 (School library book count)',
+            nodes: [
+              { id: 'sub_1', type: 'start', title: 'Set Up Column Alignment', description: 'Write Minuend (5000) on top and Subtrahend (2748) below. Align Thousands, Hundreds, Tens, and Ones.' },
+              { id: 'sub_2', type: 'process', title: 'Check Ones Column (0 - 8)', description: '0 is smaller than 8. We cannot subtract! We must borrow, but Tens and Hundreds are also 0.' },
+              { id: 'sub_3', type: 'process', title: 'Borrow from Thousands', description: 'Borrow 1 from 5 thousands: 5 becomes 4 thousands. It passes 10 hundreds to the hundreds column.' },
+              { id: 'sub_4', type: 'process', title: 'Cascade Borrowing to Tens and Ones', description: '10 hundreds becomes 9 hundreds (passing 10 tens). 10 tens becomes 9 tens (passing 10 ones to the ones column).' },
+              { id: 'sub_5', type: 'process', title: 'Subtract Column by Column', description: 'Ones: 10 - 8 = 2. Tens: 9 - 4 = 5. Hundreds: 9 - 7 = 2. Thousands: 4 - 2 = 2.' },
+              { id: 'sub_6', type: 'output', title: 'Verification Check', description: 'Result = 2252. Quick check by addition: 2252 + 2748 = 5000! Correct.' }
+            ]
+          },
+          {
+            title: 'How to Solve: Long Division Algorithm (DMSB)',
+            concept: 'Divide, Multiply, Subtract, Bring down — step-by-step cycle',
+            realWorldExample: 'Example: Divide 854 by 6 (Sharing 854 notebooks equally among 6 classes)',
+            nodes: [
+              { id: 'div_1', type: 'start', title: 'Set Up Division Bracket', description: 'Dividend = 854 (inside), Divisor = 6 (outside). Look at the first digit: 8.' },
+              { id: 'div_2', type: 'process', title: 'Divide & Multiply First Digit (Hundreds)', description: '6 goes into 8 once (1). Multiply: 1 × 6 = 6. Place 1 in quotient above 8.' },
+              { id: 'div_3', type: 'process', title: 'Subtract & Bring Down Tens', description: 'Subtract: 8 - 6 = 2. Bring down 5 to make 25.' },
+              { id: 'div_4', type: 'process', title: 'Divide Tens: 25 ÷ 6', description: '6 goes into 25 four times (4 × 6 = 24). Place 4 in quotient. Subtract: 25 - 24 = 1.' },
+              { id: 'div_5', type: 'process', title: 'Bring Down Ones: 14 ÷ 6', description: 'Bring down 4 to make 14. 6 goes into 14 two times (2 × 6 = 12). Subtract: 14 - 12 = 2.' },
+              { id: 'div_6', type: 'output', title: 'Final Quotient and Remainder', description: 'Quotient = 142, Remainder = 2. Verification: (6 × 142) + 2 = 852 + 2 = 854!' }
+            ]
+          },
+          {
+            title: 'How to Solve: 2-Digit Multiplication (Area & Box Model)',
+            concept: 'Splitting into tens and ones to find partial products without carrying stress',
+            realWorldExample: 'Example: Multiply 48 × 26',
+            nodes: [
+              { id: 'mul_1', type: 'start', title: 'Decompose Numbers into Expanded Form', description: '48 = 40 + 8. 26 = 20 + 6. Draw a 2 × 2 grid.' },
+              { id: 'mul_2', type: 'process', title: 'Top-Left Box (Tens × Tens)', description: '40 × 20 = 800 (4 × 2 with two zeros).' },
+              { id: 'mul_3', type: 'process', title: 'Top-Right & Bottom-Left Boxes', description: 'Top-Right: 8 × 20 = 160. Bottom-Left: 40 × 6 = 240.' },
+              { id: 'mul_4', type: 'process', title: 'Bottom-Right Box (Ones × Ones)', description: '8 × 6 = 48.' },
+              { id: 'mul_5', type: 'process', title: 'Sum All 4 Partial Products', description: '800 + 240 + 160 + 48 = 1040 + 208 = 1248.' },
+              { id: 'mul_6', type: 'output', title: 'Final Product', description: '48 × 26 = 1248. Faster and far less prone to regrouping mistakes!' }
+            ]
+          },
+          {
+            title: 'How to Solve: 4-Digit Column Addition with Carrying',
+            concept: 'Right-to-left place value column addition carrying groups of 10 to the next rank',
+            realWorldExample: 'Example: Add 4786 + 3859',
+            nodes: [
+              { id: 'add_1', type: 'start', title: 'Align Digits by Place Value', description: 'Stack 4786 over 3859. Align Th, H, T, O columns.' },
+              { id: 'add_2', type: 'process', title: 'Add Ones: 6 + 9 = 15', description: 'Write 5 in ones place, carry 1 ten over to the tens column.' },
+              { id: 'add_3', type: 'process', title: 'Add Tens: 8 + 5 + 1 (carried) = 14', description: 'Write 4 in tens place, carry 1 hundred over to the hundreds column.' },
+              { id: 'add_4', type: 'process', title: 'Add Hundreds: 7 + 8 + 1 (carried) = 16', description: 'Write 6 in hundreds place, carry 1 thousand to the thousands column.' },
+              { id: 'add_5', type: 'process', title: 'Add Thousands: 4 + 3 + 1 (carried) = 8', description: 'Write 8 in thousands place.' },
+              { id: 'add_6', type: 'output', title: 'Final Sum', description: 'Total Sum = 8645. Quick estimate: ~4800 + ~3900 = 8700 (Very close!).' }
+            ]
+          },
+          {
+            title: 'How to Solve: Fraction Subtraction & Equivalent Fractions',
+            concept: 'Subtracting like fractions and converting unlike fractions using common denominators',
+            realWorldExample: 'Example: Solve 7/8 - 3/8 and Convert 2/3 to 12ths',
+            nodes: [
+              { id: 'frac_1', type: 'start', title: 'Inspect Denominators', description: 'For 7/8 - 3/8, the denominators are identical (8). They represent the same size slices!' },
+              { id: 'frac_2', type: 'process', title: 'Subtract Numerators Only', description: 'Keep the bottom number 8. Subtract top numbers: 7 - 3 = 4. Result = 4/8.' },
+              { id: 'frac_3', type: 'process', title: 'Simplify to Lowest Terms', description: 'Divide top and bottom by 4: (4 ÷ 4) / (8 ÷ 4) = 1/2.' },
+              { id: 'frac_4', type: 'process', title: 'Equivalent Fraction Rule', description: 'To convert 2/3 to denominator 12: 12 ÷ 3 = 4 (multiplier). Multiply numerator: 2 × 4 = 8.' },
+              { id: 'frac_5', type: 'output', title: 'Mastery Conclusion', description: '7/8 - 3/8 = 1/2, and 2/3 = 8/12. Never subtract denominators!' }
+            ]
+          }
+        ],
         infographics: [
           {
-            id: 'c4_bm_1',
-            title: 'Fraction Pizza Model',
-            subtitle: 'Numerator vs Denominator',
-            category: 'Fractions',
-            keyRule: 'Denominator = Total equal slices cut; Numerator = Slices you have eaten',
+            id: 'c4_bm_subtraction',
+            title: '4-Digit & 5-Digit Subtraction with Regrouping',
+            subtitle: 'Mastering the Borrow Across Zeros Cascade',
+            category: 'Subtraction Mastery',
+            keyRule: 'Minuend - Subtrahend = Difference; Verify: Difference + Subtrahend = Minuend',
+            visualType: 'steps',
+            details: [
+              { label: 'Minuend', value: 'The top number you are subtracting from (e.g., 6000)' },
+              { label: 'Subtrahend', value: 'The number being subtracted (e.g., 2847)' },
+              { label: 'The Zero Cascade', value: '6000 becomes 5 thousands, 9 hundreds, 9 tens, 10 ones' },
+              { label: 'Direct Subtraction', value: '10-7=3 (Ones), 9-4=5 (Tens), 9-8=1 (Hundreds), 5-2=3 (Thousands) -> 3153' },
+              { label: 'Verification', value: '3153 + 2847 = 6000 (100% Guaranteed Correct)' }
+            ],
+            mnemonicOrTakeaway: 'When borrowing across zeros, all intermediate zeros become 9, and only the final one becomes 10!'
+          },
+          {
+            id: 'c4_bm_division',
+            title: 'The Long Division Engine (DMSB)',
+            subtitle: 'Dad, Mom, Sister, Brother & The Zero in Quotient Rule',
+            category: 'Division Mastery',
+            keyRule: 'Dividend = (Divisor × Quotient) + Remainder, where Remainder < Divisor',
+            visualType: 'steps',
+            details: [
+              { label: 'D - Divide', value: 'Find how many times divisor fits into current working digits' },
+              { label: 'M - Multiply', value: 'Multiply quotient digit by divisor and write underneath' },
+              { label: 'S - Subtract', value: 'Subtract product from working digits to find difference' },
+              { label: 'B - Bring Down', value: 'Bring down the next digit from the dividend' },
+              { label: 'The Zero Trap!', value: 'If brought-down digit is smaller than divisor, write 0 in quotient before bringing next!' }
+            ],
+            mnemonicOrTakeaway: 'DMSB: Does McDonalds Sell Cheeseburgers? (Divide, Multiply, Subtract, Bring down)!'
+          },
+          {
+            id: 'c4_bm_multiplication',
+            title: 'Multi-Digit Multiplication Matrix',
+            subtitle: 'Grid Method & Area Model for 2-Digit × 2-Digit',
+            category: 'Multiplication',
+            keyRule: 'Partial Products: Break numbers into Tens and Ones, multiply each part, then sum',
             visualType: 'diagram',
             details: [
-              { label: 'Proper Fraction', value: 'Numerator < Denominator (e.g., 3/5 < 1 whole)' },
-              { label: 'Improper Fraction', value: 'Numerator >= Denominator (e.g., 7/4 > 1 whole)' },
-              { label: 'Mixed Fraction', value: 'Whole number + Fraction (e.g., 1 3/4)' }
+              { label: 'Expand Factors', value: '54 × 32 = (50 + 4) × (30 + 2)' },
+              { label: 'Box 1: 50 × 30', value: '1500 (5 × 3 with two trailing zeros)' },
+              { label: 'Box 2: 50 × 2', value: '100' },
+              { label: 'Box 3: 4 × 30', value: '120' },
+              { label: 'Box 4: 4 × 2', value: '8' },
+              { label: 'Total Sum', value: '1500 + 100 + 120 + 8 = 1728' }
             ],
-            mnemonicOrTakeaway: 'Denominator is DOWN (bottom), Numerator is North (top)!'
+            mnemonicOrTakeaway: 'The Area Model eliminates carrying errors and visually guarantees no missed digits!'
+          },
+          {
+            id: 'c4_bm_addition',
+            title: '4-Digit Place Value Column Addition',
+            subtitle: 'Carrying Across Thousands & Hundreds Boundaries',
+            category: 'Addition Mastery',
+            keyRule: 'Never carry more than 1 group per column unless adding 3 or more addends',
+            visualType: 'steps',
+            details: [
+              { label: 'Align Place Values', value: 'Always line up numbers strictly by their rightmost Ones digit' },
+              { label: 'Column Order', value: 'Add Ones -> Tens -> Hundreds -> Thousands' },
+              { label: 'Carry Rule', value: 'If column sum >= 10, write the unit digit and carry the ten to next left column' },
+              { label: 'Rounding Check', value: 'Round 4892 to 4900 and 3125 to 3100 -> Estimate = 8000' }
+            ],
+            mnemonicOrTakeaway: 'Estimate before you calculate: if your answer is far from the rounded sum, re-check carries!'
+          },
+          {
+            id: 'c4_bm_fractions',
+            title: 'Fraction Operations Spectrum',
+            subtitle: 'Proper, Improper, Mixed & Like Subtraction',
+            category: 'Fractions',
+            keyRule: 'When subtracting like fractions, subtract ONLY numerators: a/c - b/c = (a - b)/c',
+            visualType: 'diagram',
+            details: [
+              { label: 'Proper Fraction', value: 'Top < Bottom: 3/5 (Less than 1 whole)' },
+              { label: 'Improper Fraction', value: 'Top >= Bottom: 7/4 (More than 1 whole)' },
+              { label: 'Mixed Number', value: 'Whole + Fraction: 1 3/4 = 7/4' },
+              { label: 'Like Subtraction', value: '7/9 - 4/9 = (7 - 4)/9 = 3/9 = 1/3' },
+              { label: 'Whole Minus Fraction', value: '1 - 5/8 = 8/8 - 5/8 = 3/8' }
+            ],
+            mnemonicOrTakeaway: 'Denominator is DOWN (stands firm), Numerator is North (does the arithmetic)!'
           }
         ],
         tipsAndTricks: [
           {
-            id: 'c4_bm_t1',
-            title: 'The Butterfly Cross for Comparing Fractions',
-            tagline: 'Instantly tell which fraction is bigger without common denominators',
-            difficulty: 'Medium',
+            id: 'c4_bm_t_sub_zeros',
+            title: 'The "-1 Magic Shift" for Subtraction Across Zeros',
+            tagline: 'Completely eliminate all borrowing across zeros in 2 seconds flat',
+            difficulty: 'Easy',
             howItWorks: [
-              'Comparing 3/5 and 4/7:',
-              'Cross-multiply: 3 x 7 = 21 (write over left fraction).',
-              'Cross-multiply: 5 x 4 = 20 (write over right fraction).',
-              'Since 21 > 20, 3/5 is strictly greater than 4/7!'
+              'When subtracting from a number with trailing zeros like 7000 - 3458:',
+              'Subtract 1 from both numbers: 7000 - 1 = 6999, and 3458 - 1 = 3457.',
+              'The difference remains EXACTLY the same: (A - 1) - (B - 1) = A - B.',
+              'Now subtract 6999 - 3457 with ZERO borrowing: 9-7=2, 9-5=4, 9-4=5, 6-3=3 -> 3542!'
             ],
             example: {
-              question: 'Which is bigger: 5/8 or 3/5?',
+              question: 'Calculate 5000 - 2638 without borrowing',
               steps: [
-                'Left top x Right bottom: 5 x 5 = 25.',
-                'Left bottom x Right top: 8 x 3 = 24.',
-                '25 > 24, so 5/8 is larger!'
+                'Subtract 1 from 5000 -> 4999.',
+                'Subtract 1 from 2638 -> 2637.',
+                'Column subtract 4999 - 2637: 9-7=2, 9-3=6, 9-6=3, 4-2=2.',
+                'Result: 2362.'
               ],
-              answer: '5/8 is larger'
+              answer: '2362'
             },
-            commonPitfall: 'Writing the cross-product under the fraction instead of above the numerator.',
-            timeSaved: 'Solves fraction comparison in 3 seconds.'
+            commonPitfall: 'Forgetting to subtract 1 from the bottom number as well.',
+            timeSaved: 'Saves 25 seconds and prevents 90% of zero-borrowing test mistakes.'
+          },
+          {
+            id: 'c4_bm_t_div_zero',
+            title: 'The Zero in Quotient Trap Alert',
+            tagline: 'Never miss the middle zero in long division again',
+            difficulty: 'Medium',
+            howItWorks: [
+              'Consider dividing 824 by 4:',
+              '8 ÷ 4 = 2. Subtract: 8 - 8 = 0.',
+              'Bring down 2. Can 4 go into 2? NO (0 times)!',
+              'You MUST write 0 in the quotient above 2 BEFORE bringing down 4.',
+              'Now bring down 4 to make 24. 24 ÷ 4 = 6. Quotient = 206 (not 26!).'
+            ],
+            example: {
+              question: 'Divide 918 by 9',
+              steps: [
+                '9 ÷ 9 = 1.',
+                'Bring down 1. 9 does not go into 1 -> put 0 in quotient.',
+                'Bring down 8 to make 18. 18 ÷ 9 = 2.',
+                'Quotient = 102. (Check: 102 × 9 = 918).'
+              ],
+              answer: '102'
+            },
+            commonPitfall: 'Skipping the 0 and writing 12 instead of 102.',
+            timeSaved: 'Eliminates the #1 most common primary school division error.'
+          },
+          {
+            id: 'c4_bm_t_mult_25',
+            title: 'Multiply by 25 in a Flash (Quarter Rule)',
+            tagline: 'Since 25 = 100 / 4, divide by 4 and add two zeros',
+            difficulty: 'Easy',
+            howItWorks: [
+              'To multiply any number by 25:',
+              'Step 1: Divide the number by 4.',
+              'Step 2: Multiply by 100 (append two zeros).',
+              'Example: 48 × 25 = (48 ÷ 4) × 100 = 12 × 100 = 1200!'
+            ],
+            example: {
+              question: 'Calculate 64 × 25 mentally',
+              steps: [
+                'Divide 64 by 4: 64 ÷ 4 = 16.',
+                'Multiply by 100: 16 × 100 = 1600.'
+              ],
+              answer: '1600'
+            },
+            commonPitfall: 'Multiplying by 4 instead of dividing.',
+            timeSaved: 'Solves 2-digit by 25 in 2 seconds.'
+          },
+          {
+            id: 'c4_bm_t_add_left',
+            title: 'Left-to-Right Mental Addition',
+            tagline: 'Calculate multi-digit sums mentally faster than writing on paper',
+            difficulty: 'Medium',
+            howItWorks: [
+              'To add 465 + 328 in your head:',
+              'Add hundreds: 400 + 300 = 700.',
+              'Add tens: 60 + 20 = 80 -> running total = 780.',
+              'Add ones: 5 + 8 = 13 -> 780 + 13 = 793!'
+            ],
+            example: {
+              question: 'Add 534 + 258 mentally',
+              steps: [
+                'Hundreds: 500 + 200 = 700.',
+                'Tens: 30 + 50 = 80 -> Running total: 780.',
+                'Ones: 4 + 8 = 12 -> 780 + 12 = 792.'
+              ],
+              answer: '792'
+            },
+            commonPitfall: 'Trying to carry numbers from right-to-left in your head, which strains memory.',
+            timeSaved: 'Doubles mental math speed in quizzes.'
+          },
+          {
+            id: 'c4_bm_t_frac_butterfly',
+            title: 'The Butterfly Cross for Comparing & Subtracting Fractions',
+            tagline: 'Subtract unlike fractions without writing out long LCM tables',
+            difficulty: 'Medium',
+            howItWorks: [
+              'To solve 3/4 - 1/3:',
+              'Draw diagonal wings: Top-left × Bottom-right: 3 × 3 = 9.',
+              'Bottom-left × Top-right: 4 × 1 = 4.',
+              'Subtract top numbers: 9 - 4 = 5 (Numerator).',
+              'Multiply bottom numbers: 4 × 3 = 12 (Denominator). Result = 5/12!'
+            ],
+            example: {
+              question: 'Solve 4/5 - 1/2 using the Butterfly Cross',
+              steps: [
+                'Cross-multiply: 4 × 2 = 8, and 5 × 1 = 5.',
+                'Subtract numerators: 8 - 5 = 3.',
+                'Multiply denominators: 5 × 2 = 10.',
+                'Final answer: 3/10.'
+              ],
+              answer: '3/10'
+            },
+            commonPitfall: 'Subtracting bottom denominators (e.g. thinking 5 - 2 = 3).',
+            timeSaved: 'Reduces fraction subtraction from 1 minute to 10 seconds.'
           }
         ],
         quiz: [
           {
-            id: 'c4_bm_q1',
-            question: 'Which fraction is equivalent to 2/3?',
-            options: ['4/6', '3/4', '4/9', '5/6'],
+            id: 'c4_bm_q_sub1',
+            question: 'What is 5000 - 2468?',
+            options: ['2532', '2642', '2542', '3532'],
             correctIndex: 0,
-            hint: 'Multiply numerator and denominator by 2.',
-            explanation: '(2 x 2) / (3 x 2) = 4/6.',
+            hint: 'Use the -1 magic trick: 4999 - 2467, or borrow across zeros.',
+            explanation: '4999 - 2467 = 2532. Verification: 2532 + 2468 = 5000.',
             difficulty: 'Easy'
           },
           {
-            id: 'c4_bm_q2',
-            question: 'What is the remainder when 47 is divided by 5?',
-            options: ['1', '2', '3', '4'],
+            id: 'c4_bm_q_sub2',
+            question: 'A cricket stadium has 8,000 seats. If 5,345 spectators have arrived, how many seats are still empty?',
+            options: ['2,655', '2,755', '3,655', '2,645'],
+            correctIndex: 0,
+            hint: 'Empty seats = Total seats - Arrived spectators (8000 - 5345).',
+            explanation: '8000 - 5345 = 2655 empty seats. (7999 - 5344 = 2655).',
+            difficulty: 'Medium'
+          },
+          {
+            id: 'c4_bm_q_div1',
+            question: 'Divide 824 by 4. What is the quotient?',
+            options: ['26', '206', '216', '204'],
             correctIndex: 1,
-            hint: '5 x 9 = 45. How much is left over to 47?',
-            explanation: '47 = 5 x 9 + 2. Remainder is 2.',
+            hint: 'Watch out for the zero in the quotient when 4 cannot divide 2!',
+            explanation: '8 ÷ 4 = 2. Bring down 2: 4 goes into 2 zero times (put 0). Bring down 4: 24 ÷ 4 = 6. Quotient = 206.',
+            difficulty: 'Medium'
+          },
+          {
+            id: 'c4_bm_q_div2',
+            question: 'If a number is divided by 7, the quotient is 14 and the remainder is 5. What is the dividend?',
+            options: ['98', '103', '105', '93'],
+            correctIndex: 1,
+            hint: 'Formula: Dividend = (Divisor × Quotient) + Remainder.',
+            explanation: 'Dividend = (7 × 14) + 5 = 98 + 5 = 103.',
+            difficulty: 'Medium'
+          },
+          {
+            id: 'c4_bm_q_mul1',
+            question: 'What is 35 × 200?',
+            options: ['700', '7,000', '70,000', '3,500'],
+            correctIndex: 1,
+            hint: 'Multiply 35 × 2 = 70, then attach two zeros.',
+            explanation: '35 × 2 = 70, append two zeros -> 7,000.',
+            difficulty: 'Easy'
+          },
+          {
+            id: 'c4_bm_q_mul2',
+            question: 'Calculate 48 × 25 using the Quarter Shortcut.',
+            options: ['1,000', '1,200', '1,250', '1,400'],
+            correctIndex: 1,
+            hint: 'Divide 48 by 4, then multiply by 100.',
+            explanation: '48 ÷ 4 = 12. 12 × 100 = 1,200.',
+            difficulty: 'Easy'
+          },
+          {
+            id: 'c4_bm_q_add1',
+            question: 'Find the sum: 4,785 + 3,869.',
+            options: ['8,644', '8,654', '8,554', '7,654'],
+            correctIndex: 1,
+            hint: 'Add ones: 5+9=14 (carry 1), tens: 8+6+1=15 (carry 1), hundreds: 7+8+1=16 (carry 1), thousands: 4+3+1=8.',
+            explanation: '4785 + 3869 = 8654.',
+            difficulty: 'Medium'
+          },
+          {
+            id: 'c4_bm_q_frac1',
+            question: 'Solve: 7/12 - 5/12. Express in simplest form.',
+            options: ['2/12', '1/6', '1/12', '2/0'],
+            correctIndex: 1,
+            hint: 'Subtract numerators: 7 - 5 = 2/12. Then divide top and bottom by 2.',
+            explanation: '(7 - 5)/12 = 2/12 = 1/6.',
+            difficulty: 'Easy'
+          },
+          {
+            id: 'c4_bm_q_frac2',
+            question: 'A pizza is divided into 8 equal slices. Aman eats 3 slices and Neha eats 2 slices. What fraction of the pizza is left?',
+            options: ['5/8', '3/8', '1/8', '4/8'],
+            correctIndex: 1,
+            hint: 'Total eaten = 3/8 + 2/8 = 5/8. Fraction left = 1 - 5/8 = 8/8 - 5/8.',
+            explanation: '1 - (3/8 + 2/8) = 8/8 - 5/8 = 3/8 left.',
+            difficulty: 'Medium'
+          },
+          {
+            id: 'c4_bm_q_frac3',
+            question: 'Which of the following fractions is equivalent to 3/4?',
+            options: ['6/8', '9/15', '4/3', '7/8'],
+            correctIndex: 0,
+            hint: 'Multiply numerator and denominator by 2: (3 × 2) / (4 × 2).',
+            explanation: '(3 × 2) / (4 × 2) = 6/8.',
             difficulty: 'Easy'
           }
         ]

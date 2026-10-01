@@ -398,37 +398,258 @@ export const olympiadQuestionsData: OlympiadQuestion[] = [
       keyTakeaway: "Empty rods on an abacus represent digit 0. Never skip intermediate rods."
     }
   },
+  // ============================================================
+  // WINSOME DIGITAL LEARNING - CLASS 4 OLYMPIAD MASTERCLASSES
+  // Video 1: "Class 4 Maths Olympiad | Chapter 3 - Fractions | Part 1- Concept Class I IMO 2026" (Q-P1OTdwS6k)
+  // Video 2: "Class 4 Maths Olympiad Workbook | Worksheet 2- Computation Operations | SOF IMO 2026" (_gjlRFjdxGE)
+  // ============================================================
   {
-    id: "oly_c4_ch2_winsome_p1",
+    id: "oly_c4_winsome_comp_cryptarithm",
     gradeRange: [3, 4],
     grade: 4,
-    chapter: "Computation Operations & Divisibility",
+    chapter: "Computation Operations",
+    chapterNumber: 2,
+    section: "Mathematical",
+    difficulty: "Achievers HOTS",
+    contestTag: "SOF IMO Class 4 · Winsome Digital Learning",
+    sofContestYear: "2024-25",
+    youtubeWalkthroughId: "_gjlRFjdxGE",
+    videoAnalysis: {
+      channel: "@winsomeDigitallearning",
+      videoTitle: "Class 4 Maths Olympiad Workbook | Worksheet 2- Computation Operations | SOF IMO 2026",
+      keyConceptAnalyzed: "Solving column addition and subtraction cryptarithms by tracking digit carries strictly from right to left.",
+      instructorSpeedHack: "Look at the unit place first: 8 + 5 = 13 guarantees R = 3 and carry 1. Then solve column by column.",
+      commonOlympiadTrap: "Forgetting to add carried-over digits from preceding columns.",
+      hotTopic: "Cryptarithm & Missing Digits"
+    },
+    question: "In the addition problem below, letters P, Q, and R represent distinct single digits:\n   4 P 6 8\n+  2 8 Q 5\n----------\n   7 3 4 R\nFind the value of (P × Q) - R.",
+    options: ["25", "28", "21", "32"],
+    correctIndex: 0,
+    explanation: {
+      conventionalStepByStep: [
+        "Step 1 (Ones Column): 8 + 5 = 13. Write 3 in ones place, carry over 1 to tens place. Therefore, R = 3.",
+        "Step 2 (Tens Column): 6 + Q + 1 (carried) = 14. This gives 7 + Q = 14 => Q = 7. Write 4 in tens place, carry over 1 to hundreds place.",
+        "Step 3 (Hundreds Column): P + 8 + 1 (carried) = 13. This gives P + 9 = 13 => P = 4. Write 3 in hundreds place, carry over 1 to thousands place.",
+        "Step 4 (Thousands Column): 4 + 2 + 1 (carried) = 7 (matches exactly).",
+        "Step 5: All digits are distinct: P = 4, Q = 7, R = 3.",
+        "Step 6: Calculate target expression: (P × Q) - R = (4 × 7) - 3 = 28 - 3 = 25."
+      ],
+      speedHack: "Units digit gives R=3 instantly. Tens column: 7 + Q ends in 4 => Q=7. Hundreds: 9 + P ends in 3 => P=4. Expression: (4 × 7) - 3 = 25.",
+      keyTakeaway: "In SOF IMO cryptarithms, always solve column-by-column starting from the rightmost place value and track every single carry."
+    }
+  },
+  {
+    id: "oly_c4_winsome_comp_remainder_max",
+    gradeRange: [3, 4],
+    grade: 4,
+    chapter: "Computation Operations",
+    chapterNumber: 2,
+    section: "Mathematical",
+    difficulty: "Level 2",
+    contestTag: "SOF IMO Class 4 · Winsome Digital Learning",
+    sofContestYear: "2024-25",
+    youtubeWalkthroughId: "_gjlRFjdxGE",
+    videoAnalysis: {
+      channel: "@winsomeDigitallearning",
+      videoTitle: "Class 4 Maths Olympiad Workbook | Worksheet 2- Computation Operations | SOF IMO 2026",
+      keyConceptAnalyzed: "The Division Remainder Maximization Theorem: In Dividend = (Divisor × Quotient) + Remainder, Remainder < Divisor, so Max Remainder = Divisor - 1.",
+      instructorSpeedHack: "Max Dividend = Divisor × (Quotient + 1) - 1. E.g., 14 × 29 - 1 = 406 - 1 = 405.",
+      commonOlympiadTrap: "Setting remainder equal to divisor (14) or forgetting that remainder can be non-zero.",
+      hotTopic: "Maximum Remainder Property"
+    },
+    question: "When a certain whole number N is divided by 14, the quotient obtained is 28. What is the GREATEST possible value of N?",
+    options: ["392", "405", "406", "419"],
+    correctIndex: 1,
+    explanation: {
+      conventionalStepByStep: [
+        "Recall the fundamental Division Algorithm: Dividend (N) = (Divisor × Quotient) + Remainder.",
+        "Given Divisor = 14 and Quotient = 28.",
+        "Base product: 14 × 28 = 392.",
+        "According to the division theorem, the remainder must strictly satisfy: 0 ≤ Remainder < Divisor (14).",
+        "Therefore, the GREATEST possible remainder is 14 - 1 = 13.",
+        "Greatest possible value of N = 392 + 13 = 405.",
+        "Verification: 405 ÷ 14 = 28 with remainder 13."
+      ],
+      speedHack: "Shortcut: Max N = 14 × (28 + 1) - 1 = 14 × 29 - 1 = 406 - 1 = 405 in 4 seconds!",
+      keyTakeaway: "In SOF IMO division problems asking for maximum dividend, always add the maximum possible remainder (Divisor - 1)."
+    }
+  },
+  {
+    id: "oly_c4_winsome_comp_dmas",
+    gradeRange: [3, 4],
+    grade: 4,
+    chapter: "Computation Operations",
     chapterNumber: 2,
     section: "Everyday",
     difficulty: "Level 2",
     contestTag: "SOF IMO Class 4 · Winsome Digital Learning",
-    sofContestYear: "2023-24",
+    sofContestYear: "2024-25",
+    youtubeWalkthroughId: "_gjlRFjdxGE",
     videoAnalysis: {
       channel: "@winsomeDigitallearning",
-      videoTitle: "Maths Olympiad Prep Guide Class 4: Chapter 2 Computation Operations",
-      keyConceptAnalyzed: "Fundamental Division Algorithm: Dividend = (Divisor × Quotient) + Remainder.",
-      instructorSpeedHack: "Multiply by 9 trick: 9 × 43 = (10 × 43) - 43 = 430 - 43 = 387. Then add 5.",
-      commonOlympiadTrap: "Adding remainder before multiplication or forgetting to add remainder.",
-      hotTopic: "Division Algorithm"
+      videoTitle: "Class 4 Maths Olympiad Workbook | Worksheet 2- Computation Operations | SOF IMO 2026",
+      keyConceptAnalyzed: "Strict DMAS precedence: Division first, Multiplication second, Addition third, Subtraction fourth.",
+      instructorSpeedHack: "Calculate division and multiplication islands independently, then combine.",
+      commonOlympiadTrap: "Blindly solving from left to right and adding before multiplying.",
+      hotTopic: "Order of Operations (DMAS)"
     },
-    question: "When a secret number is divided by 9, the quotient is 43 and the remainder is 5. What is the secret number?",
-    options: ["387", "392", "382", "395"],
+    question: "Evaluate the mathematical expression: 144 ÷ 12 + 8 × 15 - 45. What is the final result?",
+    options: ["87", "120", "165", "255"],
+    correctIndex: 0,
+    explanation: {
+      conventionalStepByStep: [
+        "Follow the strict DMAS order of operations: D (Division) -> M (Multiplication) -> A (Addition) -> S (Subtraction).",
+        "Step 1 (Division): 144 ÷ 12 = 12.",
+        "Expression becomes: 12 + 8 × 15 - 45.",
+        "Step 2 (Multiplication): 8 × 15 = 120.",
+        "Expression becomes: 12 + 120 - 45.",
+        "Step 3 (Addition): 12 + 120 = 132.",
+        "Step 4 (Subtraction): 132 - 45 = 87."
+      ],
+      speedHack: "Pair operational islands: (144 ÷ 12) + (8 × 15) - 45 = 12 + 120 - 45 = 132 - 45 = 87.",
+      keyTakeaway: "Never compute left-to-right when mixed arithmetic symbols appear in Olympiad questions. Always execute Division & Multiplication before Addition & Subtraction."
+    }
+  },
+  {
+    id: "oly_c4_winsome_frac_collection",
+    gradeRange: [3, 4],
+    grade: 4,
+    chapter: "Fractions & Decimals",
+    chapterNumber: 3,
+    section: "Everyday",
+    difficulty: "Level 2",
+    contestTag: "SOF IMO Class 4 · Winsome Digital Learning",
+    sofContestYear: "2024-25",
+    youtubeWalkthroughId: "Q-P1OTdwS6k",
+    videoAnalysis: {
+      channel: "@winsomeDigitallearning",
+      videoTitle: "Class 4 Maths Olympiad | Chapter 3 - Fractions | Part 1- Concept Class I IMO 2026",
+      keyConceptAnalyzed: "Fraction of a collection: Finding the non-participating complement (1 - p/q) using unitary bar scaling.",
+      instructorSpeedHack: "Find unshaded/non-participating fraction first (1 - 5/8 = 3/8), then divide total by 8 and multiply by 3.",
+      commonOlympiadTrap: "Answering the number of participating students (30) instead of non-participating (18).",
+      hotTopic: "Fraction Complement of a Collection"
+    },
+    question: "In a primary school with 48 students in Class 4, 5/8 of the students took part in the Maths Olympiad contest. How many students DID NOT take part in the Olympiad?",
+    options: ["30 students", "18 students", "24 students", "16 students"],
     correctIndex: 1,
     explanation: {
       conventionalStepByStep: [
-        "Recall the fundamental Division Algorithm theorem: Dividend = (Divisor × Quotient) + Remainder.",
-        "Here Divisor = 9, Quotient = 43, Remainder = 5.",
-        "Calculate product: 9 × 43 = 387.",
-        "Add remainder: 387 + 5 = 392.",
-        "Verify: 392 ÷ 9 = 43 with remainder 5."
+        "Total students in Class 4 = 48.",
+        "Fraction of students participating = 5/8.",
+        "Number of participating students = (5/8) × 48 = 5 × (48 ÷ 8) = 5 × 6 = 30 students.",
+        "Students who DID NOT take part = Total students - Participating students = 48 - 30 = 18 students."
       ],
-      speedHack: "Multiplication by 9 trick: 9 × 43 = (10 × 43) - 43 = 430 - 43 = 387. Then 387 + 5 = 392.",
-      keyTakeaway: "Dividend = Divisor × Quotient + Remainder is the most tested theorem in SOF IMO Class 4."
+      speedHack: "Complement method: Fraction NOT participating = 1 - 5/8 = 3/8. Directly compute (3/8) × 48 = 3 × 6 = 18 students in one quick mental step!",
+      keyTakeaway: "Read Olympiad questions with laser focus: questions often ask for the unshaded, remaining, or non-participating portion!"
+    }
+  },
+  {
+    id: "oly_c4_winsome_frac_compare_same_num",
+    gradeRange: [3, 4],
+    grade: 4,
+    chapter: "Fractions & Decimals",
+    chapterNumber: 3,
+    section: "Logical",
+    difficulty: "Level 2",
+    contestTag: "SOF IMO Class 4 · Winsome Digital Learning",
+    sofContestYear: "2024-25",
+    youtubeWalkthroughId: "Q-P1OTdwS6k",
+    videoAnalysis: {
+      channel: "@winsomeDigitallearning",
+      videoTitle: "Class 4 Maths Olympiad | Chapter 3 - Fractions | Part 1- Concept Class I IMO 2026",
+      keyConceptAnalyzed: "Comparison with Equal Numerators: When the top number is identical, the fraction with the LARGEST denominator has the SMALLEST value because the whole is sliced into more and smaller pieces.",
+      instructorSpeedHack: "More slices = smaller slice! 4/15 < 4/11 < 4/9 < 4/7.",
+      commonOlympiadTrap: "Assuming 4/15 is greatest because 15 is the biggest integer.",
+      hotTopic: "Equal Numerator Comparison"
+    },
+    question: "Four friends ordered four equal-sized pizzas: Riya ate 4/7 of her pizza, Sam ate 4/11 of his pizza, Tanu ate 4/15 of her pizza, and Kabir ate 4/9 of his pizza. Who ate the LEAST amount of pizza?",
+    options: ["Tanu", "Sam", "Kabir", "Riya"],
+    correctIndex: 0,
+    explanation: {
+      conventionalStepByStep: [
+        "Compare the fractions: 4/7, 4/11, 4/15, and 4/9.",
+        "Observe that all four fractions share the EXACT SAME numerator (4).",
+        "Golden Rule of Fractions: When numerators are equal, the fraction with the GREATEST denominator has the SMALLEST fractional value.",
+        "Why? Dividing a whole into 15 equal parts produces much smaller pieces than dividing into 7 equal parts.",
+        "Comparing denominators: 15 > 11 > 9 > 7.",
+        "Therefore: 4/15 < 4/11 < 4/9 < 4/7.",
+        "Tanu ate 4/15, which is the smallest amount."
+      ],
+      speedHack: "Mnemonic: 'Big bottom = Small bite!' Since 15 is the biggest denominator, 4/15 is immediately the smallest fraction. Answer is Tanu in 2 seconds.",
+      keyTakeaway: "Unlike numbers where bigger looks bigger, in fractions with equal numerators, the largest denominator always yields the smallest quantity."
+    }
+  },
+  {
+    id: "oly_c4_winsome_frac_mixed_improper",
+    gradeRange: [3, 4],
+    grade: 4,
+    chapter: "Fractions & Decimals",
+    chapterNumber: 3,
+    section: "Mathematical",
+    difficulty: "Level 2",
+    contestTag: "SOF IMO Class 4 · Winsome Digital Learning",
+    sofContestYear: "2024-25",
+    youtubeWalkthroughId: "Q-P1OTdwS6k",
+    videoAnalysis: {
+      channel: "@winsomeDigitallearning",
+      videoTitle: "Class 4 Maths Olympiad | Chapter 3 - Fractions | Part 1- Concept Class I IMO 2026",
+      keyConceptAnalyzed: "Improper to Mixed Fraction conversion: Divide Numerator by Denominator. Whole number = Quotient, Numerator = Remainder, Denominator = Divisor.",
+      instructorSpeedHack: "Find nearest multiple of denominator below numerator: 6 × 4 = 24. Remaining to 29 is 5 => 4 5/6.",
+      commonOlympiadTrap: "Swapping the quotient and remainder, mistakenly choosing 5 4/6.",
+      hotTopic: "Improper to Mixed Number Conversion"
+    },
+    question: "Which mixed fraction correctly represents the improper fraction 29/6 on a number line between 4 and 5?",
+    options: ["4 5/6", "4 1/6", "5 1/6", "5 4/6"],
+    correctIndex: 0,
+    explanation: {
+      conventionalStepByStep: [
+        "Starting improper fraction is 29/6.",
+        "Divide the numerator (29) by the denominator (6):",
+        "29 ÷ 6 = 4 with a remainder of 5, because 6 × 4 = 24, and 29 - 24 = 5.",
+        "Convert to mixed fraction format: Quotient + (Remainder / Divisor).",
+        "Whole part = 4, Fractional part = 5/6.",
+        "Thus, 29/6 = 4 5/6.",
+        "On the number line, 4 5/6 lies between 4 and 5, closer to 5."
+      ],
+      speedHack: "Multiplication anchor: 6 × 4 = 24. Difference: 29 - 24 = 5. Result = 4 and 5/6 instantly.",
+      keyTakeaway: "To convert improper fractions, Quotient becomes the Whole number, Remainder becomes the Numerator, Divisor stays as the Denominator."
+    }
+  },
+  {
+    id: "oly_c4_winsome_frac_equiv_puzzle",
+    gradeRange: [3, 4],
+    grade: 4,
+    chapter: "Fractions & Decimals",
+    chapterNumber: 3,
+    section: "Achievers",
+    difficulty: "Achievers HOTS",
+    contestTag: "SOF IMO Class 4 · Winsome Digital Learning",
+    sofContestYear: "2024-25",
+    youtubeWalkthroughId: "Q-P1OTdwS6k",
+    videoAnalysis: {
+      channel: "@winsomeDigitallearning",
+      videoTitle: "Class 4 Maths Olympiad | Chapter 3 - Fractions | Part 1- Concept Class I IMO 2026",
+      keyConceptAnalyzed: "The Equivalent Fraction Scaling Principle: Multiply or divide both numerator and denominator by the exact same scaling factor.",
+      instructorSpeedHack: "Find multipliers: 24 ÷ 3 = 8 => k = 7 × 8 = 56. 63 ÷ 7 = 9 => m = 3 × 9 = 27. k - m = 56 - 27 = 29.",
+      commonOlympiadTrap: "Finding only k or m and stopping, or adding instead of subtracting.",
+      hotTopic: "Chained Equivalent Fractions"
+    },
+    question: "If 3/7 = 24/k = m/63, what is the value of (k - m)?",
+    options: ["29", "56", "27", "83"],
+    correctIndex: 0,
+    explanation: {
+      conventionalStepByStep: [
+        "Part 1: Find k from 3/7 = 24/k.",
+        "Compare numerators: 24 ÷ 3 = 8 (the numerator was multiplied by 8).",
+        "By the golden rule of equivalent fractions, multiply denominator by 8: k = 7 × 8 = 56.",
+        "Part 2: Find m from 3/7 = m/63.",
+        "Compare denominators: 63 ÷ 7 = 9 (the denominator was multiplied by 9).",
+        "Multiply numerator by 9: m = 3 × 9 = 27.",
+        "Part 3: Compute the required expression (k - m):",
+        "k - m = 56 - 27 = 29."
+      ],
+      speedHack: "Mental scaling: 7 × (24/3) = 7 × 8 = 56. 3 × (63/7) = 3 × 9 = 27. 56 - 27 = 29 in under 10 seconds!",
+      keyTakeaway: "In equivalent fraction chain equations, determine the multiplier for each ratio independently, then perform the requested final algebraic operation."
     }
   },
   {

@@ -72,6 +72,7 @@ export interface PillarContent {
   tagline: string;
   iconName: string;
   flowchart: FlowchartData;
+  flowcharts?: FlowchartData[];
   infographics: InfographicItem[];
   tipsAndTricks: TipTrickItem[];
   quiz: QuizQuestion[];

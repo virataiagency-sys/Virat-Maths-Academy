@@ -521,6 +521,70 @@ export const mathVideosData: MathVideoLesson[] = [
     relatedTopicOrChapter: "SOF IMO Class 3-4 Number Sense & Computation"
   },
 
+  // @winsomeDigitallearning - CLASS 4 MATHS OLYMPIAD
+  {
+    id: "sof_imo_c4_winsome_fractions",
+    youtubeId: "Q-P1OTdwS6k",
+    title: "Class 4 Maths Olympiad | Chapter 3 - Fractions | Part 1- Concept Class I IMO 2026",
+    category: "sof_olympiad",
+    classes: [4],
+    duration: "18:40",
+    instructor: "Winsome Digital Learning",
+    channel: "@winsomeDigitallearning",
+    description: "Comprehensive Class 4 Maths Olympiad Fractions masterclass: Defining numerator and denominator, Unit vs Proper vs Improper vs Mixed fractions, Butterfly cross-comparison, fraction of a whole collection, and avoiding Olympiad test traps.",
+    keyTakeaways: [
+      "Denominator = total equal pieces; Numerator = shaded/selected pieces",
+      "When numerators are equal, the fraction with the GREATER denominator is SMALLER (e.g. 4/15 < 4/7)",
+      "Unitary fraction method: To find fraction of a collection (e.g. 5/8 of 48), divide by denominator then multiply by numerator",
+      "Convert improper to mixed: Divide numerator by denominator. Quotient = Whole number, Remainder = Numerator"
+    ],
+    timestamps: [
+      { time: "00:00", label: "Introduction to Fractions & Real-World Representation" },
+      { time: "03:15", label: "Types of Fractions (Unit, Like, Unlike, Proper, Improper, Mixed)" },
+      { time: "08:10", label: "Comparing Fractions (Equal Numerators vs Equal Denominators)" },
+      { time: "12:35", label: "Fraction of a Whole Collection & Word Problems" },
+      { time: "15:50", label: "SOF IMO Previous Year Fraction Questions & Speed Hacks" }
+    ],
+    practiceChallenge: {
+      question: "In a box of 48 colored balls, 5/8 are red and the rest are blue. How many blue balls are in the box?",
+      options: ["30", "18", "24", "16"],
+      correctIndex: 1,
+      explanation: "Fraction of blue balls = 1 - 5/8 = 3/8. Unitary method: 48 ÷ 8 = 6. Blue balls = 3 × 6 = 18."
+    },
+    relatedTopicOrChapter: "Class 4 Chapter 3 Fractions"
+  },
+  {
+    id: "sof_imo_c4_winsome_computation",
+    youtubeId: "_gjlRFjdxGE",
+    title: "Class 4 Maths Olympiad Workbook | Worksheet 2- Computation Operations | SOF IMO 2026",
+    category: "sof_olympiad",
+    classes: [4],
+    duration: "24:15",
+    instructor: "Winsome Digital Learning",
+    channel: "@winsomeDigitallearning",
+    description: "Detailed walkthrough of SOF IMO Class 4 Workbook Worksheet 2 on Computation Operations: Missing digit cryptarithms, Division Algorithm with remainder boundaries, multi-step commercial word problems, and DMAS order of operations.",
+    keyTakeaways: [
+      "Division Algorithm: Dividend = (Divisor × Quotient) + Remainder, with strict boundary 0 ≤ Remainder < Divisor",
+      "The greatest possible remainder for any divisor D is always D - 1",
+      "For missing digit addition/subtraction (cryptarithms), solve column by column starting from the ones place and track carries carefully",
+      "Follow DMAS (Division, Multiplication, Addition, Subtraction) strictly to avoid order of operation errors"
+    ],
+    timestamps: [
+      { time: "00:00", label: "Worksheet 2 Overview & Key Exam Patterns" },
+      { time: "04:10", label: "Solving Cryptarithm (Missing Digit Puzzles)" },
+      { time: "09:45", label: "Division Theorem & Remainder Maximization Problems" },
+      { time: "15:20", label: "Multi-Step Computation Word Problems" },
+      { time: "20:05", label: "DMAS Order of Operations & Achievers Questions" }
+    ],
+    practiceChallenge: {
+      question: "When a number N is divided by 14, the quotient is 28. What is the GREATEST possible value of N?",
+      options: ["392", "405", "406", "419"],
+      correctIndex: 1,
+      explanation: "N = (14 × 28) + Remainder. The remainder must be less than 14, so max remainder = 13. N = 392 + 13 = 405."
+    },
+    relatedTopicOrChapter: "Class 4 Chapter 2 Computation Operations"
+  },
+
   // @studywithJyotiMukhija - CLASS 4 MATHS OLYMPIAD
   {
     id: "sof_imo_c4_jyoti_fractions",

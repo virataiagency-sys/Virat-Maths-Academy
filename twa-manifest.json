@@ -1,0 +1,37 @@
+{
+  "packageId": "com.viratmathsacademy.app",
+  "host": "ais-pre-bvm4l3uzdxsaajuxzpwmgh-694768886112.asia-east1.run.app",
+  "name": "Virat Maths Academy",
+  "launcherName": "ViratMaths",
+  "themeColor": "#312E81",
+  "navigationColor": "#0F172A",
+  "backgroundColor": "#0F172A",
+  "enableNotifications": false,
+  "startUrl": "/",
+  "iconUrl": "https://ais-pre-bvm4l3uzdxsaajuxzpwmgh-694768886112.asia-east1.run.app/pwa-512x512.png",
+  "maskableIconUrl": "https://ais-pre-bvm4l3uzdxsaajuxzpwmgh-694768886112.asia-east1.run.app/pwa-maskable-512x512.png",
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "android"
+  },
+  "splashScreenFadeOutDuration": 300,
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://ais-pre-bvm4l3uzdxsaajuxzpwmgh-694768886112.asia-east1.run.app/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": false
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  }
+}

@@ -4,16 +4,27 @@ import { Play, RotateCcw, ChevronRight, ChevronLeft, CheckCircle2, ArrowDown, He
 
 interface FlowchartViewerProps {
   data: FlowchartData;
+  flowcharts?: FlowchartData[];
   classNameTitle: string;
   pillarName: string;
 }
 
 export const FlowchartViewer: React.FC<FlowchartViewerProps> = ({
   data,
+  flowcharts,
   classNameTitle,
   pillarName,
 }) => {
+  const [selectedFlowchartIndex, setSelectedFlowchartIndex] = useState(0);
+  const activeFlowchartList = flowcharts && flowcharts.length > 0 ? flowcharts : [data];
+  const currentFlowchart = activeFlowchartList[selectedFlowchartIndex] || data;
+
   const [activeStepIndex, setActiveStepIndex] = useState<number | null>(null);
+
+  const handleSelectFlowchart = (index: number) => {
+    setSelectedFlowchartIndex(index);
+    setActiveStepIndex(null);
+  };
 
   const handleStartWalkthrough = () => {
     setActiveStepIndex(0);
@@ -22,7 +33,7 @@ export const FlowchartViewer: React.FC<FlowchartViewerProps> = ({
   const handleNext = () => {
     if (activeStepIndex === null) {
       setActiveStepIndex(0);
-    } else if (activeStepIndex < data.nodes.length - 1) {
+    } else if (activeStepIndex < currentFlowchart.nodes.length - 1) {
       setActiveStepIndex(activeStepIndex + 1);
     }
   };
@@ -54,6 +65,28 @@ export const FlowchartViewer: React.FC<FlowchartViewerProps> = ({
 
   return (
     <div className="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm">
+      {/* Algorithm Tabs (when multiple flowcharts exist) */}
+      {activeFlowchartList.length > 1 && (
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-5 border-b border-slate-100 scrollbar-none">
+          <span className="text-xs font-bold text-slate-500 uppercase tracking-wider shrink-0 mr-1">
+            Algorithms:
+          </span>
+          {activeFlowchartList.map((fc, idx) => (
+            <button
+              key={idx}
+              onClick={() => handleSelectFlowchart(idx)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                selectedFlowchartIndex === idx
+                  ? 'bg-indigo-600 text-white shadow-xs'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+              }`}
+            >
+              {fc.title.replace(/^How to\s+/i, '').slice(0, 35)}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Header with Title and Walkthrough Controls */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100 mb-6">
         <div>
@@ -61,9 +94,14 @@ export const FlowchartViewer: React.FC<FlowchartViewerProps> = ({
             <span>{classNameTitle}</span>
             <span>·</span>
             <span>{pillarName} Algorithm</span>
+            {activeFlowchartList.length > 1 && (
+              <span className="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full text-[10px] font-bold">
+                {selectedFlowchartIndex + 1} of {activeFlowchartList.length}
+              </span>
+            )}
           </div>
-          <h3 className="text-lg font-bold text-slate-900">{data.title}</h3>
-          <p className="text-xs text-slate-500 mt-0.5">{data.concept}</p>
+          <h3 className="text-lg font-bold text-slate-900">{currentFlowchart.title}</h3>
+          <p className="text-xs text-slate-500 mt-0.5">{currentFlowchart.concept}</p>
         </div>
 
         {/* Walkthrough controller buttons */}
@@ -87,11 +125,11 @@ export const FlowchartViewer: React.FC<FlowchartViewerProps> = ({
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <span className="text-xs font-mono font-bold text-slate-800 px-2">
-                Step {activeStepIndex + 1} / {data.nodes.length}
+                Step {activeStepIndex + 1} / {currentFlowchart.nodes.length}
               </span>
               <button
                 onClick={handleNext}
-                disabled={activeStepIndex === data.nodes.length - 1}
+                disabled={activeStepIndex === currentFlowchart.nodes.length - 1}
                 className="p-1 rounded bg-white text-slate-700 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50 shadow-xs cursor-pointer"
                 title="Next step"
               >
@@ -114,16 +152,16 @@ export const FlowchartViewer: React.FC<FlowchartViewerProps> = ({
         <Terminal className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
         <div>
           <span className="text-xs font-bold text-indigo-950 block">Target Problem Example</span>
-          <span className="text-xs font-mono text-indigo-900">{data.realWorldExample}</span>
+          <span className="text-xs font-mono text-indigo-900">{currentFlowchart.realWorldExample}</span>
         </div>
       </div>
 
       {/* Flowchart Diagram Pathway */}
       <div className="relative max-w-2xl mx-auto py-2">
-        {data.nodes.map((node, index) => {
+        {currentFlowchart.nodes.map((node, index) => {
           const isCurrentActive = activeStepIndex === index;
           const isPassed = activeStepIndex !== null && index < activeStepIndex;
-          const isLast = index === data.nodes.length - 1;
+          const isLast = index === currentFlowchart.nodes.length - 1;
 
           return (
             <div key={node.id} className="relative flex flex-col items-center">

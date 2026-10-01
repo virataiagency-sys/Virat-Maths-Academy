@@ -1,0 +1,31 @@
+{
+  "id": "/",
+  "name": "Virat Maths Academy",
+  "short_name": "ViratMaths",
+  "description": "Comprehensive student learning platform for Class 1 to 12 by VIRAT SHANKHDHAR and AADYA SHANKHDHAR, covering Basic Maths, Algebra, Abacus, and Vedic Speed Maths with interactive quizzes, algorithmic flowcharts, visual infographics, and mental math tricks.",
+  "theme_color": "#312e81",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

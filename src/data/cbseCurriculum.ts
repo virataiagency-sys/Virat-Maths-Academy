@@ -220,6 +220,39 @@ export const cbseBooksData: Record<number, CBSEGradeBooks> = {
             vedicShortcut: "Fractional complement: 1 - (1/4 + 1/2) = 1 - 3/4 = 1/4 liter = 250 mL."
           }
         ]
+      },
+      {
+        id: "c4_ch3",
+        number: 3,
+        title: "A Trip to Bhopal (Multi-Digit Subtraction, Addition & Division)",
+        description: "Real-world school excursion calculations: bus seating division, ticket price subtraction, fuel tank calculations across zeros.",
+        keyFormulas: [
+          "Buses Needed = Total Students ÷ Seats per Bus",
+          "Remaining Amount = Total Budget - Total Expenditure",
+          "Verification: Difference + Subtrahend = Minuend"
+        ],
+        problems: [
+          {
+            id: "c4_p3_sub",
+            exercise: "Ex 3.1 Q4",
+            type: "NCERT Exercise",
+            question: "There are 210 children going on a school trip to Bhopal. If 4 buses with 50 seats each are booked, how many children will get seats, and how many children will be left without seats?",
+            difficulty: "Medium",
+            hint: "Multiply 4 × 50 to find total seats, then subtract from 210.",
+            solution: "Step 1: Total seats available = 4 buses × 50 seats = 200 seats.\nStep 2: Total children = 210.\nStep 3: Children with seats = 200.\nStep 4: Children without seats = 210 - 200 = 10 children.\nAnswer: 200 children get seats; 10 children are left without seats.",
+            vedicShortcut: "Mental split: 210 - (4 × 50) = 210 - 200 = 10."
+          },
+          {
+            id: "c4_p3_sub_fuel",
+            exercise: "Ex 3.2 Q2",
+            type: "NCERT Exemplar",
+            question: "A school bus has a diesel tank of 5000 mL capacity. If the driver pours 3658 mL of diesel into it, how many milliliters of diesel are needed to fill it to the brim?",
+            difficulty: "Medium",
+            hint: "Subtract 5000 - 3658 using the -1 shift trick: 4999 - 3657.",
+            solution: "Step 1: Full capacity = 5000 mL.\nStep 2: Current diesel = 3658 mL.\nStep 3: Needed = 5000 - 3658.\nStep 4: Shift by -1: 4999 - 3657 = 1342 mL.\nStep 5: Verify: 3658 + 1342 = 5000 mL.\nAnswer: 1342 mL needed.",
+            vedicShortcut: "Nikhilam (All from 9 and last from 10 on 3658 from 5000): 4-3=1, 9-6=3, 9-5=4, 10-8=2 => 1342 mL."
+          }
+        ]
       }
     ]
   },

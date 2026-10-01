@@ -22,13 +22,16 @@ import {
   Radio,
   Moon,
   Sun,
-  BookA
+  BookA,
+  Package
 } from 'lucide-react';
 import { GradeLevel } from '../types/curriculum';
 import { loginWithGoogle, loginAsGuest, logoutUser } from '../lib/firebase';
 import { User } from 'firebase/auth';
 import { StreakData } from '../types/streak';
 import { getLocalDateString } from '../lib/streak';
+import { PWAInstallButton } from './PWAInstallButton';
+import { AndroidBundleModal } from './AndroidBundleModal';
 
 export type AppView =
   | 'ai_agent'
@@ -83,6 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onToggleDarkMode
 }) => {
   const [authLoading, setAuthLoading] = useState(false);
+  const [showAndroidBundleModal, setShowAndroidBundleModal] = useState(false);
   const today = getLocalDateString();
   const isStreakActiveToday = streakData.lastActiveDate === today;
 
@@ -276,6 +280,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="hidden xl:inline">Glossary</span>
               </button>
             )}
+
+            <PWAInstallButton />
+
+            {/* Google Play .AAB Release Bundle Action */}
+            <button
+              onClick={() => setShowAndroidBundleModal(true)}
+              className="p-2 sm:px-2.5 sm:py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:hover:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer border border-emerald-200 dark:border-emerald-800"
+              title="Google Play Release Bundle (.aab) & Android Package"
+            >
+              <Package className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <span className="hidden xl:inline">.AAB Bundle</span>
+            </button>
 
             {/* Cheat Sheets Quick Launch */}
             <button
@@ -597,6 +613,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </div>
       </div>
+
+      <AndroidBundleModal
+        isOpen={showAndroidBundleModal}
+        onClose={() => setShowAndroidBundleModal(false)}
+      />
     </header>
   );
 };

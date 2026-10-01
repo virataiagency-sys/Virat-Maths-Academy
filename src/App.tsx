@@ -34,6 +34,7 @@ import { AIAgentWorkspace } from './components/AIAgentWorkspace';
 import { FloatingAgentDrawer } from './components/FloatingAgentDrawer';
 import { FlowAIPodcastModal } from './components/FlowAIPodcastModal';
 import { MathGlossaryModal } from './components/MathGlossaryModal';
+import { OfflineIndicator } from './components/OfflineIndicator';
 import { loadWeeklyPlannerData, saveWeeklyPlannerData, saveWeeklyPlannerCloud } from './lib/planner';
 import { AchievementToast } from './components/AchievementToast';
 import { BadgeAchievement } from './types/achievements';
@@ -470,6 +471,7 @@ export default function App() {
               {activeDimension === 'flowchart' && (
                 <FlowchartViewer
                   data={pillarContent.flowchart}
+                  flowcharts={pillarContent.flowcharts}
                   classNameTitle={`Class ${currentGrade}`}
                   pillarName={pillarContent.pillarName}
                 />
@@ -776,6 +778,9 @@ export default function App() {
           setActiveView('cbse_multiverse');
         }}
       />
+
+      {/* PWA Offline Connectivity Indicator */}
+      <OfflineIndicator />
 
       {/* Global Flow AI Multi-Host Podcast Studio Modal */}
       <FlowAIPodcastModal

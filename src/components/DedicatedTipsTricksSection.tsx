@@ -14,8 +14,6 @@ import {
   Layers,
   Play,
   X,
-  ExternalLink,
-  Video,
   Trophy
 } from 'lucide-react';
 
@@ -31,7 +29,6 @@ export function DedicatedTipsTricksSection({ initialGrade = 6, onOpenVideoLesson
   const [activeDrillTipId, setActiveDrillTipId] = useState<string | null>(null);
   const [drillAnswers, setDrillAnswers] = useState<Record<string, { selected: number; isCorrect: boolean }>>({});
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeVideoModalId, setActiveVideoModalId] = useState<string | null>(null);
 
   // Filtering
   const filteredTips = masterTipsData.filter((tip) => {
@@ -385,47 +382,6 @@ export function DedicatedTipsTricksSection({ initialGrade = 6, onOpenVideoLesson
           <BookOpen className="w-12 h-12 text-slate-300 mx-auto mb-3" />
           <h3 className="text-base font-bold text-slate-700">No tips match this specific filter</h3>
           <p className="text-xs text-slate-500 mt-1">Try switching to 'All Classes' or clear the search query.</p>
-        </div>
-      )}
-
-      {/* Video Modal Popup */}
-      {activeVideoModalId && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-3xl overflow-hidden shadow-2xl relative text-white">
-            <div className="p-4 bg-slate-950 flex items-center justify-between border-b border-slate-800">
-              <div className="flex items-center gap-2 text-xs font-bold text-rose-400">
-                <Video className="w-4 h-4" />
-                <span>Video Lesson Demonstration</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <a
-                  href={`https://www.youtube.com/watch?v=${activeVideoModalId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-slate-400 hover:text-white flex items-center gap-1 font-semibold mr-2"
-                >
-                  <span>Open in YouTube</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-                <button
-                  onClick={() => setActiveVideoModalId(null)}
-                  className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 cursor-pointer"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-
-            <div className="relative w-full aspect-video bg-black">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${activeVideoModalId}?autoplay=1&rel=0`}
-                title="Mathematics Video Lesson"
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
         </div>
       )}
     </div>
